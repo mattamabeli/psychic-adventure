@@ -1,3 +1,91 @@
-name: Your New Jekyll Site
-markdown: redcarpet
-pygments: true
+name: Matthew Amabeli
+author: "Matt Amabeli"
+# markdown: redcarpet
+markdown: kramdown
+kramdown:
+ parse_span_html: true
+ coderay_line_numbers: inline
+ enable_coderay: true
+highlighter: rouge
+permalink: /archives/:title/
+
+# url: "mattamabeli.com"
+
+# pager: 5
+# pager_path: "journal/page"
+# pager_category: "journal"
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "journal/page:num"
+
+# domain: mattamabeli.com
+# description: The web hub of all things Matt
+
+contact:
+mailing_address: 555 Sandpiper Lane, apt. 206, Wadsworth, Oh
+phone: 330-614-5418
+email: mattamabeli@outlook.com
+
+ie_frequency: 30
+ie_tile_color: "#27AE60"
+ie_tile_small: "/assets/images/microsoft/ms-small-128x128.png"
+ie_tile_medium: "/assets/images/microsoft/ms-medium-270x270.png"
+ie_tile_wide: "/assets/images/microsoft/ms-wide-558x270.png"
+ie_tile_large: "/assets/images/microsoft/ms-large-558x558.png"
+
+rss_title: Matt Amabeli
+rss_author: Matt Amabeli
+rss_description: The spiritual home of Matt Amabeli
+rss_link: http://www.mattamabeli.com
+
+lessc: "nodejs /usr/local/bin/lessc"
+css_dest: assets/css
+
+tsc: "tsc"
+js_dest: assets/script
+
+
+exclude: [Gemfile, README.md, legacy]
+
+collections:
+ pinned:
+  output: false
+ resume:
+  output: false
+
+
+defaults:
+ - scope:
+    type: posts
+   values:
+    layout: post
+ - scope:
+    type: pinned
+    path: "journal"
+   values:
+    layout: post
+ - scope:
+    path: "about"
+    type: pages
+   values:
+    layout: "default"
+ - scope:
+    path: "archives"
+    type: "pages"
+   values:
+    layout: "default"
+ # - scope:
+ #    type: resume
+ #    path: "resume/education"
+ #   values:
+ #    categories: "education"
+ # - scope:
+ #    type: resume
+ #    path: "resume/work"
+ #   values:
+ #    categories: "job"
+ # - scope:
+ #    type: resume
+ #    path: "resume/other"
+ #   values:
+ #    categories: "other"
